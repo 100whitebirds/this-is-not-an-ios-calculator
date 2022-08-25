@@ -66,8 +66,8 @@ export const useCalculator = () => {
       setActiveOperator(operator);
       calculateResult();
     } else {
-      shiftNumberToPrevious();
       setActiveOperator(operator);
+      shiftNumberToPrevious();
     }
   };
 
@@ -106,6 +106,7 @@ export const useCalculator = () => {
     }
     setNumber(formatToString(result));
     setPrevNumber('0');
+    setActiveOperator(null);
   };
   return {
     number,
