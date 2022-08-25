@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { CalculatorButton } from '../components';
-import { useCalculator, Operators } from '../hooks';
+import { useCalculator } from '../hooks';
 import { styles } from '../styles';
 
 export const CalculatorScreen = () => {
@@ -10,7 +10,10 @@ export const CalculatorScreen = () => {
     cleanUp,
     toggleSign,
     changeNumber,
-    applyOperator,
+    add,
+    subtract,
+    divide,
+    multiply,
     calculatePercent,
     calculateResult,
   } = useCalculator();
@@ -25,44 +28,28 @@ export const CalculatorScreen = () => {
         <CalculatorButton text="C" color="#9B9B9B" action={cleanUp} />
         <CalculatorButton text="+/-" color="#9B9B9B" action={toggleSign} />
         <CalculatorButton text="%" color="#9B9B9B" action={calculatePercent} />
-        <CalculatorButton
-          text="÷"
-          color="#FF9427"
-          action={() => applyOperator(Operators.divide)}
-        />
+        <CalculatorButton text="÷" color="#FF9427" action={divide} />
       </View>
 
       <View style={styles.row}>
         <CalculatorButton text="7" action={changeNumber} />
         <CalculatorButton text="8" action={changeNumber} />
         <CalculatorButton text="9" action={changeNumber} />
-        <CalculatorButton
-          text="×"
-          color="#FF9427"
-          action={() => applyOperator(Operators.multiply)}
-        />
+        <CalculatorButton text="×" color="#FF9427" action={multiply} />
       </View>
 
       <View style={styles.row}>
         <CalculatorButton text="4" action={changeNumber} />
         <CalculatorButton text="5" action={changeNumber} />
         <CalculatorButton text="6" action={changeNumber} />
-        <CalculatorButton
-          text="-"
-          color="#FF9427"
-          action={() => applyOperator(Operators.subtract)}
-        />
+        <CalculatorButton text="-" color="#FF9427" action={subtract} />
       </View>
 
       <View style={styles.row}>
         <CalculatorButton text="1" action={changeNumber} />
         <CalculatorButton text="2" action={changeNumber} />
         <CalculatorButton text="3" action={changeNumber} />
-        <CalculatorButton
-          text="+"
-          color="#FF9427"
-          action={() => applyOperator(Operators.add)}
-        />
+        <CalculatorButton text="+" color="#FF9427" action={add} />
       </View>
 
       <View style={styles.row}>

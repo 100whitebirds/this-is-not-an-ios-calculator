@@ -71,6 +71,11 @@ export const useCalculator = () => {
     }
   };
 
+  const add = () => applyOperator(Operators.add);
+  const subtract = () => applyOperator(Operators.subtract);
+  const divide = () => applyOperator(Operators.divide);
+  const multiply = () => applyOperator(Operators.multiply);
+
   const calculatePercent = () => {
     if (
       activeOperator === Operators.add ||
@@ -114,7 +119,10 @@ export const useCalculator = () => {
     toggleSign,
     calculatePercent,
     changeNumber,
-    applyOperator,
+    add,
+    subtract,
+    divide,
+    multiply,
     calculateResult,
   };
 };
